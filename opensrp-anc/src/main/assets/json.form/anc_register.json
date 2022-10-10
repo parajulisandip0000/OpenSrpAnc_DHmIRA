@@ -76,10 +76,10 @@
       },
 
       {
-        "key": "anc_id",
+        "key": "card_id",
         "openmrs_entity_parent": "",
-        "openmrs_entity": "person_identifier",
-        "openmrs_entity_id": "ANC_ID",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "163278AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "edit_text",
         "hint": "{{anc_register.step1.anc_card_id.hint}}",
 

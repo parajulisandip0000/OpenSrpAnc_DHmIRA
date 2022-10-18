@@ -61,6 +61,7 @@
         "openmrs_entity": "person_identifier",
         "openmrs_entity_id": "ANC_ID",
         "type": "edit_text",
+        "read_only": "true",
         "barcode_type": "qrcode",
         "hint": "{{anc_register.step1.anc_id.hint}}",
         "value": "0",

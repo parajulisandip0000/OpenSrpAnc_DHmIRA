@@ -5481,7 +5481,7 @@
         "openmrs_entity_parent": "78032AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_entity": "concept",
         "openmrs_entity_id": "164464AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        "type": "native_radio",
+        "type": "hidden",
         "label": "{{anc_counselling_treatment.step11.flu_date.label}}",
         "label_info_text": "{{anc_counselling_treatment.step11.flu_date.label_info_text}}",
         "label_info_title": "{{anc_counselling_treatment.step11.flu_date.label_info_title}}",
@@ -5510,7 +5510,7 @@
           }
         ],
         "v_required": {
-          "value": true,
+          "value": false,
           "err": "{{anc_counselling_treatment.step11.flu_date.v_required.err}}"
         },
         "relevance": {
@@ -5542,7 +5542,7 @@
         "openmrs_entity_parent": "78032AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_entity": "concept",
         "openmrs_entity_id": "1410AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        "type": "date_picker",
+        "type": "hidden",
         "hint": "{{anc_counselling_treatment.step11.flu_date_done.hint}}",
         "expanded": "false",
         "max_date": "today",
@@ -5559,7 +5559,7 @@
         "openmrs_entity_parent": "78032AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_entity": "concept",
         "openmrs_entity_id": "165362AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        "type": "native_radio",
+        "type": "hidden",
         "label": "{{anc_counselling_treatment.step11.flu_dose_notdone.label}}",
         "label_text_style": "bold",
         "options": [
@@ -5600,7 +5600,7 @@
           }
         ],
         "v_required": {
-          "value": true,
+          "value": false,
           "err": "{{anc_counselling_treatment.step11.flu_dose_notdone.v_required.err}}"
         },
         "relevance": {

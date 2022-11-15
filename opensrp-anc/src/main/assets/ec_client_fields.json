@@ -244,6 +244,7 @@
           "json_mapping": {
             "field": "addresses.address2"
           }
+
         }
       ]
     }

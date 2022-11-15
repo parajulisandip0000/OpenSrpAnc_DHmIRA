@@ -82,15 +82,15 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "163278AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "edit_text",
-        "hint": "{{anc_register.step1.anc_card_id.hint}}",
+        "hint": "{{anc_register.step1.card_id.hint}}",
 
         "v_numeric": {
           "value": "true",
-          "err": "{{anc_register.step1.anc_card_id.v_required.err}}"
+          "err": "{{anc_register.step1.card_id.v_required.err}}"
         },
         "v_required": {
           "value": "true",
-          "err": "{{anc_register.step1.anc_card_id.v_required.err}}"
+          "err": "{{anc_register.step1.card_id.v_required.err}}"
         }
       },
 

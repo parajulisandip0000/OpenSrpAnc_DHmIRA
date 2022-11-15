@@ -147,6 +147,7 @@ public class RegisterFragmentModel implements RegisterFragmentContract.Model {
                 String ancId;
                 String phoneNumber;
                 String altContactName;
+                String cardId;
                 String nextContact;
                 String nextContactDate;
                 if (client == null) {
@@ -183,6 +184,8 @@ public class RegisterFragmentModel implements RegisterFragmentContract.Model {
 
                 altContactName = getJsonString(getJsonObject(client, "attributes"), "alt_name");
 
+                cardId= getJsonString( getJsonObject ( client, "attributes"), "card_id");
+
                 edd = getJsonString(getJsonObject(client, "attributes"), "edd");
 
                 nextContact = getJsonString(getJsonObject(client, "attributes"), "next_contact");
@@ -191,7 +194,7 @@ public class RegisterFragmentModel implements RegisterFragmentContract.Model {
 
 
                 matrixCursor
-                        .addRow(new Object[]{entityId, null, firstName, lastName, dob,edd, ancId, phoneNumber, altContactName,nextContact,nextContactDate});
+                        .addRow(new Object[]{entityId, null, firstName, lastName, dob,edd, ancId, phoneNumber, altContactName,cardId,nextContact,nextContactDate});
             }
         }
         return matrixCursor;

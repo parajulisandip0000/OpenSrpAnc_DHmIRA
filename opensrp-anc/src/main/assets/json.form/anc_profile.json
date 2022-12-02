@@ -530,7 +530,14 @@
         "key": "ultrasound_done_date",
         "type": "hidden",
         "label_text_style": "bold",
-        "text_color": "#FF0000"
+        "text_color": "#FF0000",
+        "calculation": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "profile_calculation_rules.yml"
+            }
+          }
+        }
       },
       {
         "key": "ultrasound_toaster",

@@ -68,8 +68,11 @@ public class RegisterFragmentModel implements RegisterFragmentContract.Model {
                 tableName + "." + DBConstantsUtils.KeyUtils.BASE_ENTITY_ID, tableName + "." + DBConstantsUtils.KeyUtils.FIRST_NAME,
                 tableName + "." + DBConstantsUtils.KeyUtils.LAST_NAME, tableName + "." + DBConstantsUtils.KeyUtils.ANC_ID,
                 tableName + "." + DBConstantsUtils.KeyUtils.DOB, getRegisterQueryProvider().getDetailsTable() + "." + DBConstantsUtils.KeyUtils.PHONE_NUMBER,
-                getRegisterQueryProvider().getDetailsTable() + "." + DBConstantsUtils.KeyUtils.ALT_NAME, tableName + "." + DBConstantsUtils.KeyUtils.DATE_REMOVED,
-                getRegisterQueryProvider().getDetailsTable() + "." + DBConstantsUtils.KeyUtils.EDD, getRegisterQueryProvider().getDetailsTable() + "." + DBConstantsUtils.KeyUtils.RED_FLAG_COUNT,
+                getRegisterQueryProvider().getDetailsTable() + "." + DBConstantsUtils.KeyUtils.ALT_NAME,
+                getRegisterQueryProvider().getDetailsTable() + "." + DBConstantsUtils.KeyUtils.CARD_ID,
+                tableName + "." + DBConstantsUtils.KeyUtils.DATE_REMOVED,
+                getRegisterQueryProvider().getDetailsTable() + "." + DBConstantsUtils.KeyUtils.EDD,
+                getRegisterQueryProvider().getDetailsTable() + "." + DBConstantsUtils.KeyUtils.RED_FLAG_COUNT,
                 getRegisterQueryProvider().getDetailsTable() + "." + DBConstantsUtils.KeyUtils.YELLOW_FLAG_COUNT, getRegisterQueryProvider().getDetailsTable() + "." + DBConstantsUtils.KeyUtils.CONTACT_STATUS,
                 getRegisterQueryProvider().getDetailsTable() + "." + DBConstantsUtils.KeyUtils.NEXT_CONTACT, getRegisterQueryProvider().getDetailsTable() + "." + DBConstantsUtils.KeyUtils.NEXT_CONTACT_DATE,
                 getRegisterQueryProvider().getDetailsTable() + "." + DBConstantsUtils.KeyUtils.LAST_CONTACT_RECORD_DATE};
@@ -119,7 +122,12 @@ public class RegisterFragmentModel implements RegisterFragmentContract.Model {
     @Override
     public AdvancedMatrixCursor createMatrixCursor(Response<String> response) {
         String[] columns = new String[]{"_id", "relationalid", DBConstantsUtils.KeyUtils.FIRST_NAME, DBConstantsUtils.KeyUtils.LAST_NAME,
-                DBConstantsUtils.KeyUtils.DOB,DBConstantsUtils.KeyUtils.EDD, DBConstantsUtils.KeyUtils.ANC_ID, DBConstantsUtils.KeyUtils.PHONE_NUMBER, DBConstantsUtils.KeyUtils.ALT_NAME,DBConstantsUtils.KeyUtils.NEXT_CONTACT,DBConstantsUtils.KeyUtils.NEXT_CONTACT_DATE};
+                DBConstantsUtils.KeyUtils.DOB,DBConstantsUtils.KeyUtils.EDD,
+                DBConstantsUtils.KeyUtils.ANC_ID, DBConstantsUtils.KeyUtils.PHONE_NUMBER,
+                DBConstantsUtils.KeyUtils.ALT_NAME,
+                DBConstantsUtils.KeyUtils.CARD_ID,
+                DBConstantsUtils.KeyUtils.NEXT_CONTACT,
+                DBConstantsUtils.KeyUtils.NEXT_CONTACT_DATE};
         AdvancedMatrixCursor matrixCursor = new AdvancedMatrixCursor(columns);
 
         if (response == null || response.isFailure() || StringUtils.isBlank(response.payload())) {
@@ -139,6 +147,7 @@ public class RegisterFragmentModel implements RegisterFragmentContract.Model {
                 String ancId;
                 String phoneNumber;
                 String altContactName;
+                String cardId;
                 String nextContact;
                 String nextContactDate;
                 if (client == null) {
@@ -175,6 +184,8 @@ public class RegisterFragmentModel implements RegisterFragmentContract.Model {
 
                 altContactName = getJsonString(getJsonObject(client, "attributes"), "alt_name");
 
+                cardId= getJsonString( getJsonObject ( client, "attributes"), "card_id");
+
                 edd = getJsonString(getJsonObject(client, "attributes"), "edd");
 
                 nextContact = getJsonString(getJsonObject(client, "attributes"), "next_contact");
@@ -183,7 +194,7 @@ public class RegisterFragmentModel implements RegisterFragmentContract.Model {
 
 
                 matrixCursor
-                        .addRow(new Object[]{entityId, null, firstName, lastName, dob,edd, ancId, phoneNumber, altContactName,nextContact,nextContactDate});
+                        .addRow(new Object[]{entityId, null, firstName, lastName, dob,edd, ancId, phoneNumber, altContactName,cardId,nextContact,nextContactDate});
             }
         }
         return matrixCursor;

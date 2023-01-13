@@ -61,6 +61,7 @@
         "openmrs_entity": "person_identifier",
         "openmrs_entity_id": "ANC_ID",
         "type": "edit_text",
+        "read_only": "true",
         "barcode_type": "qrcode",
         "hint": "{{anc_register.step1.anc_id.hint}}",
         "value": "0",
@@ -76,20 +77,20 @@
       },
 
       {
-        "key": "anc_id",
+        "key": "card_id",
         "openmrs_entity_parent": "",
-        "openmrs_entity": "person_identifier",
-        "openmrs_entity_id": "ANC_ID",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "163278AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "edit_text",
-        "hint": "{{anc_register.step1.anc_card_id.hint}}",
+        "hint": "{{anc_register.step1.card_id.hint}}",
 
         "v_numeric": {
           "value": "true",
-          "err": "{{anc_register.step1.anc_card_id.v_required.err}}"
+          "err": "{{anc_register.step1.card_id.v_required.err}}"
         },
         "v_required": {
           "value": "true",
-          "err": "{{anc_register.step1.anc_card_id.v_required.err}}"
+          "err": "{{anc_register.step1.card_id.v_required.err}}"
         }
       },
 

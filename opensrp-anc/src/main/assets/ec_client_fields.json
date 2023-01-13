@@ -27,6 +27,14 @@
           }
         },
         {
+          "column_name": "card_id",
+          "type": "Event",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "163278AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          }
+        },
+        {
           "column_name": "alt_phone_number",
           "type": "Client",
           "json_mapping": {
@@ -54,6 +62,14 @@
           "json_mapping": {
             "field": "obs.fieldCode",
             "concept": "163258AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          }
+        },
+        {
+          "column_name": "card_id",
+          "type": "Event",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "163278AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           }
         },
         {
@@ -228,6 +244,7 @@
           "json_mapping": {
             "field": "addresses.address2"
           }
+
         }
       ]
     }

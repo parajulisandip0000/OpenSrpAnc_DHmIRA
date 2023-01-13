@@ -530,7 +530,14 @@
         "key": "ultrasound_done_date",
         "type": "hidden",
         "label_text_style": "bold",
-        "text_color": "#FF0000"
+        "text_color": "#FF0000",
+        "calculation": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "profile_calculation_rules.yml"
+            }
+          }
+        }
       },
       {
         "key": "ultrasound_toaster",
@@ -2466,35 +2473,34 @@
           }
         }
       },
-      {
-        "key": "covid_immun_status",
+
+
+      {"key": "flu_immun_status",
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
         "openmrs_entity_id": "165227AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "native_radio",
-
-        "label": "{{anc_profile.step5.covid_immun_status.label}}",
+        "label": "{{anc_profile.step5.flu_immun_status.label}}",
         "label_text_style": "bold",
         "multi_relevance": true,
         "options": [
           {
-            "key": "covid_dose_given",
-            "text": "{{anc_profile.step5.covid_immun_status.options.covid_dose_given.text}}",
+            "key": "seasonal_flu_dose_given",
+            "text": "{{anc_profile.step5.flu_immun_status.options.seasonal_flu_dose_given.text}}",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "165229AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
-            "key": "covid_dose_missing",
-            "text": "{{anc_profile.step5.covid_immun_status.options.covid_dose_missing.text}}",
-
+            "key": "seasonal_flu_dose_missing",
+            "text": "{{anc_profile.step5.flu_immun_status.options.seasonal_flu_dose_missing.text}}",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "165228AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
           {
             "key": "unknown",
-            "text": "{{anc_profile.step5.covid_immun_status.options.unknown.text}}",
+            "text": "{{anc_profile.step5.flu_immun_status.options.unknown.text}}",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -2502,26 +2508,27 @@
         ],
         "v_required": {
           "value": true,
-          "err": "{{anc_profile.step5.covid_immun_status.v_required.err}}"
+          "err": "{{anc_profile.step5.flu_immun_status.v_required.err}}"
         }
       },
+
       {
-        "key": "covid_immunisation_toaster",
+        "key": "flu_immunisation_toaster",
         "openmrs_entity_parent": "",
         "openmrs_entity": "",
         "openmrs_entity_id": "",
         "type": "toaster_notes",
-        "text": "{{anc_profile.step5.covid_immunisation_toaster.text}}",
+        "text": "{{anc_profile.step5.flu_immunisation_toaster.text}}",
         "text_color": "#000000",
-        "toaster_info_text": "{{anc_profile.step5.covid_immunisation_toaster.toaster_info_text}}",
-        "toaster_info_title": "{{anc_profile.step5.covid_immunisation_toaster.toaster_info_title}}",
+        "toaster_info_text": "{{anc_profile.step5.flu_immunisation_toaster.toaster_info_text}}",
+        "toaster_info_title": "{{anc_profile.step5.flu_immunisation_toaster.toaster_info_title}}",
         "toaster_type": "info",
         "relevance": {
-          "step5:covid_immun_status": {
+          "step5:flu_immun_status": {
             "ex-checkbox": [
               {
                 "or": [
-                  "covid_dose_missing",
+                  "seasonal_flu_dose_missing",
                   "unknown"
                 ]
               }
@@ -2529,73 +2536,29 @@
           }
         }
       },
+
       {
-        "key": "immunised_against_covid_toaster",
+        "key": "immunised_against_flu_toaster",
         "openmrs_entity_parent": "",
         "openmrs_entity": "",
         "openmrs_entity_id": "",
         "type": "toaster_notes",
-        "text": "{{anc_profile.step5.immunised_against_covid_toaster.text}}",
+        "text": "{{anc_profile.step5.immunised_against_flu_toaster.text}}",
         "text_color": "#000000",
         "toaster_type": "positive",
         "relevance": {
-          "step5:covid_immun_status": {
+          "step5:flu_immun_status": {
             "ex-checkbox": [
               {
                 "or": [
-                  "covid_dose_given"
-                ]
-              }
-            ]
-          }
-        }
-      },
-      {
-        "key": "vaccine_doses",
-        "label_text_style": "bold",
-        "label": "{{anc_profile.step5.vaccine_doses}}",
-        "openmrs_entity_parent": "1542AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        "type": "check_box",
-        "options": [
-          {
-            "key": "first_dose",
-            "text": "{{anc_profile.step5.vaccine_doses.options.first_dose.text}}",
-            "value": false,
-            "openmrs_entity_id": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept"
-          },
-          {
-            "key": "second_dose",
-            "text": "{{anc_profile.step5.vaccine_doses.options.second_dose.text}}",
-            "value": false,
-            "openmrs_entity_id": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept"
-          },
-          {
-            "key": "additional_dose",
-            "text": "{{anc_profile.step5.vaccine_doses.options.additional_dose.text}}",
-            "value": false,
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "944AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            "openmrs_entity_parent": ""
-          }
-        ],
-        "relevance": {
-          "step5:covid_immun_status": {
-            "ex-checkbox": [
-              {
-                "or": [
-                  "covid_dose_given"
+                  "seasonal_flu_dose_given"
                 ]
               }
             ]
           }
         }
       }
+
 
 
     ]

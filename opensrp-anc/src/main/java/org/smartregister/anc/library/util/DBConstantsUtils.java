@@ -30,6 +30,7 @@ public class DBConstantsUtils {
         public static final String DATE_REMOVED = "date_removed";
         public static final String PHONE_NUMBER = "phone_number";
         public static final String ALT_NAME = "alt_name";
+        public static final String CARD_ID = "card_id";
         public static final String ALT_PHONE_NUMBER = "alt_phone_number";
         public static final String HOME_ADDRESS = "home_address";
         public static final String AGE = "age";
